@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des tâches</title>
+    <link rel="stylesheet" href="liste_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>To Do List</h1>
+    </header>
+        <button class="ajouter" onclick="afficherModal()">+ Ajouter une tâche</button>
+    <div id="message">
+
+    </div>
+    <!-- La page modale pour ajouter une tâche -->
+    <div class="modal_container" id="modal_container">
+        <div class="fond_gris"></div>
+        <div class="page_modale">
+            <p class="fermer" onclick="fermerModal()">x</p>
+            <h2>Nouvelle tâche</h2>
+            <label for="titre_tache">Titre :</label>
+            <input type="text" id="titre_tache" placeholder="Titre de la tâche">
+            <div class="main">
+                <div class="item_gauche">
+                    <label for="cont_description">Description :</label><br>
+                    <textarea id="cont_description" placeholder="Voulez-vous donner plus de détails ? Alors allez-y !"></textarea>
+                </div>
+                <div class="item_droit">
+                    <label for="d_debut">Date début :</label>
+                    <input type="date" id="d_debut" name="d_debut">
+                    <label for="d_fin">Date fin :</label>
+                    <input type="date" id="d_fin" name="d_fin">
+                    <label for="priorite">Priorité :</label>
+                    <select id="priorite" name="priorite">
+                        <option value="eleve">Elevée</option>
+                        <option value="moyen">Moyen</option>
+                        <option value="faible">Faible</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="ajouterTache()">Ajouter</button>
+        </div>
+    </div>
+    <!-- ************************************************************** -->
+
+    <!-- La liste des tâches -->
+    <div class="list_taches">
+        
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
