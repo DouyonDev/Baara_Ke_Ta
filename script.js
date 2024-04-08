@@ -23,11 +23,12 @@ function ajouterTache() {
     // const caractValid_priorite = /^[a-zA-Z0-9\s.,\-_!]*$/.test(priorite);
     // const caractValid_debut = /^\d{4}/'\d{2}\d{2}$/.test(dateDebut);
     // const caractValid_fin = /^\d{2}-\d{2}-\d{4}$/.test(dateFin);   //yy-yy-yyyy
-    // if (titre.trim() ==="") {
-    //     alert('Veuillez donnez un titre à votre tâche');
-    // }else if (caractValid_titre || caractValid_description || caractValid_priorite){
+    if (titre.trim() ==="") {
+        alert('Veuillez donnez un titre à votre tâche');
+    }//else if (caractValid_titre || caractValid_description || caractValid_priorite){
     //     alert('Veuillez eviter les caractères spéciaux');
-    // }else{
+    //}
+    else{
         // Créer un objet représentant la nouvelle tâche
         const nouvelleTache = {
             titre,
@@ -63,7 +64,7 @@ function ajouterTache() {
         affi_message.innerText(message);
     }
 
-// }
+}
 
 
 
