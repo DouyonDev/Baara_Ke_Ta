@@ -64,7 +64,7 @@ function ajouterTache() {
         affi_message.innerText(message);
     }
 
-// }
+}
 
 
 
