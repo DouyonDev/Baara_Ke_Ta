@@ -9,12 +9,25 @@ function fermerModal() {
     modalContainer.classList.remove('visible');
 }
 
+// Affiche la notification
+function afficherNotification() {
+    const notification = document.getElementById('modal_container_valider');
+    notification.style.display = 'block';
+
+    // Définis un délai pour masquer la notification 
+    setTimeout(() => {
+        notification.style.display = 'none'; // Masque le div après x secondes
+    }, 2000);
+}
+
 function ajouterTache() {
     const titre = document.getElementById('titre_tache').value;
     const description = document.getElementById('cont_description').value;
     const dateDebut = document.getElementById('d_debut').value;
     const dateFin = document.getElementById('d_fin').value;
     const priorite = document.getElementById('priorite').value;
+    const statut = "non";
+    
 
 
     //Validation de la tache
@@ -35,7 +48,8 @@ function ajouterTache() {
             description,
             dateDebut,
             dateFin,
-            priorite
+            priorite,
+            statut
         };
 
         // Récupérer les tâches actuelles depuis le localStorage
@@ -59,9 +73,7 @@ function ajouterTache() {
 
         // Fermer la fenêtre modale après l'ajout de la tâche
         fermerModal();
-        const message = `La tâche "${titre}" a été ajoutée avec succès ! Courage pour l'exécution !!!`;
-        const affi_message = document.getElementById('message');
-        affi_message.innerText(message);
+        afficherNotification();
     }
 
 }
@@ -185,6 +197,11 @@ function supprimerTache(titre) {
 document.addEventListener('DOMContentLoaded', () => {
     chargerTaches();
 });
+
+
+
+
+
 
 
 

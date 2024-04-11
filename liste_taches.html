@@ -12,40 +12,54 @@
 </head>
 <body>
     <header>
-        <h1>To Do List</h1>
+        <h1>Baara kè Ta</h1>
         <button class="ajouter" onclick="afficherModal()"> Ajouter une tâche</button>
-    </header>
-        
-    <div id="message">
 
     </div>
+    
+    
     <!-- La page modale pour ajouter une tâche -->
-    <div class="modal_container" id="modal_container">
-        <div class="fond_gris"></div>
-        <div class="page_modale">
-            <p class="fermer" onclick="fermerModal()">x</p>
+    <div class="modal_container" id="modal_container" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription" aria-modal="true" tabindex="-1">
+        <div class="fond_gris" aria-hidden="true"></div>
+        <div class="page_modale" role="document">
+            <p class="fermer" onclick="fermerModal()" aria-label="Fermer la fenêtre modale">x</p>
             <h2>Nouvelle tâche</h2>
             <label for="titre_tache">Titre :</label>
-            <input type="text" id="titre_tache" placeholder="Titre de la tâche">
+            <input type="text" id="titre_tache" placeholder="Titre de la tâche" aria-label="Titre de la tâche">
             <div class="main">
                 <div class="item_gauche">
                     <label for="cont_description">Description :</label><br>
-                    <textarea id="cont_description" placeholder="Voulez-vous donner plus de détails ? Alors allez-y !"></textarea>
+                    <textarea id="cont_description" placeholder="Voulez-vous donner plus de détails ? Alors allez-y !" aria-label="Description de la tâche"></textarea>
                 </div>
                 <div class="item_droit">
                     <label for="d_debut">Date début :</label>
-                    <input type="date" id="d_debut" name="d_debut">
+                    <input type="date" id="d_debut" name="d_debut" aria-label="Date de début de la tâche">
                     <label for="d_fin">Date fin :</label>
-                    <input type="date" id="d_fin" name="d_fin">
+                    <input type="date" id="d_fin" name="d_fin" aria-label="Date de fin de la tâche">
                     <label for="priorite">Priorité :</label>
-                    <select id="priorite" name="priorite">
+                    <select id="priorite" name="priorite" aria-label="Priorité de la tâche">
                         <option value="eleve">Elevée</option>
                         <option value="moyen">Moyen</option>
                         <option value="faible">Faible</option>
                     </select>
                 </div>
             </div>
-            <button onclick="ajouterTache()">Ajouter</button>
+            <button onclick="ajouterTache()" aria-label="Ajouter la tâche">Ajouter</button>
+        </div>
+    </div>
+    <!-- ************************************************************** -->
+
+    <!-- La page modale pour la confirmation -->
+    <div class="modal_container_valider" id="modal_container_valider" role="dialog">
+        <div class="fond_gris_valider" aria-hidden="true"></div>
+        <div class="page_modale_valider" role="document">
+            <h2>La tâche a été ajoutée avec succès <br>
+                Courage pour l'exécution !!!
+            </h2>
+            <div class="main">
+                <img src="img/verified.gif" alt="valider" class="gif-valider">
+            </div>
+            
         </div>
     </div>
     <!-- ************************************************************** -->
@@ -54,7 +68,8 @@
     <div class="list_taches">
         
     </div>
-
+    <!-- Gif de Validation -->
+    
     <script src="script.js" defer></script>
 </body>
 </html>
