@@ -56,6 +56,9 @@ h1{
     margin-right: 10%;
     text-decoration: none;
 }
+.footer a:hover{
+    box-shadow:0px 0px 5px 5px var(--violet);
+}
 
 @media screen and (max-width: 660px){
     .main{
